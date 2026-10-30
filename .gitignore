@@ -1,3 +1,31 @@
-node_modules/
-bin/
-obj/
+# .NET - Backend
+backend/bin/
+backend/obj/
+
+# Node.js - Frontend
+frontend/node_modules/
+
+# Node.js logs
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/pnpm-debug.log*
+
+# Build output
+frontend/dist/
+
+# Environment variables
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local
+
+# IDE
+.vs/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.user
+*.suo
+
+# OS
+.DS_Store
+Thumbs.db

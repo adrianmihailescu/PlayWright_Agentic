@@ -52,7 +52,7 @@ function observeErrors(page: Page): {
   return { applicationErrors, consoleErrors, apiErrors };
 }
 
-test('creates, completes, and reloads tasks', async ({ page }) => {
+test('creates, completes, and reloads all the tasks', async ({ page }) => {
   const { applicationErrors, consoleErrors, apiErrors } = observeErrors(page);
   const taskTitle1 = `Task A ${runId}`;
   const taskTitle2 = `Task B ${runId}`;
@@ -156,7 +156,7 @@ test('creates, completes, and reloads tasks', async ({ page }) => {
   expect(apiErrors).toEqual([]);
 });
 
-test('rejects an empty task title without creating a task', async ({ page }) => {
+test('rejects an empty task title without creating a new task', async ({ page }) => {
   const { applicationErrors, consoleErrors, apiErrors } = observeErrors(page);
   const createRequests: string[] = [];
 

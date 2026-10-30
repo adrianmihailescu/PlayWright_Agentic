@@ -1,0 +1,21 @@
+RUN_ID=tasks-api-20261030T154558-ui-run DATE=20261030 START=2026-10-30 15:45:58 +02:00 COMMAND=npx playwright test --ui --ui-port 8933
+
+Listening on http://localhost:8933
+UI_TESTS_VISIBLE=true
+locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator('.ui-mode-tree-item').filter({ hasText: 'creates, completes, and reloads all the tasks' }).first().getByRole('button', { name: 'Run', exact: true })
+
+    at [stdin]:3:132 {
+  log: [
+    "  - waiting for locator('.ui-mode-tree-item').filter({ hasText: 'creates, completes, and reloads all the tasks' }).first().getByRole('button', { name: 'Run', exact: true })"
+  ],
+  name: 'TimeoutError'
+}
+ROW_COUNT=1
+ROW_BUTTONS=[{"aria":"Run","title":"Run","display":"flex","visibility":"visible"},{"aria":"Show source","title":"Show source","display":"flex","visibility":"visible"},{"aria":"Watch","title":"Watch","display":"flex","visibility":"visible"}]
+RUN_VISIBLE=true
+UI_RUN_CLICKED=creates, completes, and reloads all the tasks
+UI_TEST_ROW=creates, completes, and reloads all the tasks
+UI_BODY=cator Source Call Log Errors Console 6 Network 44 Attachments Annotations tasks.spec.ts 135 ​ 136 await expect(task1).toContainText('Completed'); 137 await expect(task2).toContainText('Completed'); 138 ​ 139 await captureScreenshot(page, 'tasks-completed'); 140 ​ 141 // Reload and verify persisted state. 142 await page.reload(); 143 ​ 144 await expect(taskList).toBeVisible(); 145 await expect(page.getByText('Loading your tasks…')).toBeHidden(); 146 await expect(page.getByText('API connected', { exact: true })).toBeVisible(); 147 await expect(task1).toBeVisible(); 148 await expect(task2).toBeVisible(); 149 await expect(task1).toContainText('Completed'); 150 await expect(task2).toContainText('Completed'); 151 ​ 152 await captureScreenshot(page, 'tasks-after-reload'); 153 ​ 154 expect(applicationErrors).toEqual([]); 155 expect(consoleErrors).toEqual([]); 156 expect(apiErrors).toEqual([]); 157 }); 158 ​ 159 test('rejects an empty task title without creating a new task', async ({ page }) => { 160 const { applicationErrors, consoleErrors, apiErrors } = observeErrors(page); 161 const createRequests: string[] = []; 162 ​ 163 page.on('request', (request) => { 164 if (request.method() === 'POST' && /\/api\/tasks(?:[/?#]|$)/.test(request.url())) { 165 createRequests.push(request.url()); PLAYWRIGHT Status: allProjects: chromium 1/1 (100%) — 1 passed tasks.spec.ts creates, completes, and reloads all the tasks rejects an empty task title without creating a new task TESTING OPTIONS SETTINGS
+UI_ERRORS=["console: Failed to load resource: the server responded with a status of 404 ()","console: Failed to load resource: the server responded with a status of 404 ()","console: Failed to load resource: the server responded with a status of 404 ()","console: Failed to load resource: the server responded with a status of 404 ()","console: Failed to load resource: the server responded with a status of 404 ()","console: Failed to load resource: the server responded with a status of 404 ()","console: Failed to load resource: the server responded with a status of 404 ()","console: Failed to load resource: the server responded with a status of 404 ()","console: Failed to load resource: the server responded with a status of 404 ()","console: Failed to load resource: the server responded with a status of 404 ()","console: Failed to load resource: the server responded with a status of 404 ()","console: Failed to load resource: the server responded with a status of 404 ()","console: Failed to load resource: the server responded with a status of 404 ()","console: Failed to load resource: the server responded with a status of 404 ()","console: Failed to load resource: the server responded with a status of 404 ()","console: Failed to load resource: the server responded with a status of 404 ()","console: Failed to load resource: the server responded with a status of 404 ()","console: Failed to load resource: the server responded with a status of 404 ()","console: Failed to load resource: the server responded with a status of 404 ()"]

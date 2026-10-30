@@ -1,0 +1,47 @@
+RUN_ID=tasks-api-20261030T153912-debug DATE=20261030 START=2026-10-30 15:39:12 +02:00 COMMAND=npx playwright test tests/tasks.spec.ts --debug --grep 'creates, completes, and reloads all the tasks'
+
+Running 1 test using 1 worker
+
+  x  1 [chromium] › tests\tasks.spec.ts:55:5 › creates, completes, and reloads all the tasks (10.9s)
+Testing stopped early after 1 maximum allowed failures.
+
+
+  1) [chromium] › tests\tasks.spec.ts:55:5 › creates, completes, and reloads all the tasks ─────────
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    + ]
+
+      153 |
+      154 |   expect(applicationErrors).toEqual([]);
+    > 155 |   expect(consoleErrors).toEqual([]);
+          |                         ^
+      156 |   expect(apiErrors).toEqual([]);
+      157 | });
+      158 |
+        at C:\Adrian\Work\TestProjects\github\PlayWright_Agentic\e2e\tests\tasks.spec.ts:155:25
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    artifacts\20261030\tasks-api-20261030T153912-debug\test-output\tasks-creates-completes-and-reloads-all-the-tasks-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: artifacts\20261030\tasks-api-20261030T153912-debug\test-output\tasks-creates-completes-and-reloads-all-the-tasks-chromium\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    artifacts\20261030\tasks-api-20261030T153912-debug\test-output\tasks-creates-completes-and-reloads-all-the-tasks-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace artifacts\20261030\tasks-api-20261030T153912-debug\test-output\tasks-creates-completes-and-reloads-all-the-tasks-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests\tasks.spec.ts:55:5 › creates, completes, and reloads all the tasks ──────────
+  1 error was not a part of any test, see above for details
+EXIT_CODE=1 END=2026-10-30 15:39:31 +02:00

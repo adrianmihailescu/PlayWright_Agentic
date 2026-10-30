@@ -1,0 +1,17 @@
+RUN_ID=tasks-api-20261030T153957-ui-check DATE=20261030 START=2026-10-30 15:39:57 +02:00 COMMAND=npx playwright test --ui --ui-port 8931
+
+Listening on http://localhost:8931
+locator.waitFor: Timeout 15000ms exceeded.
+Call log:
+  - waiting for getByRole('treeitem', { name: 'creates, completes, and reloads all the tasks', exact: true }) to be visible
+
+    at [stdin]:8:13 {
+  log: [
+    "  - waiting for getByRole('treeitem', { name: 'creates, completes, and reloads all the tasks', exact: true }) to be visible"
+  ],
+  name: 'TimeoutError'
+}
+HTTP=200
+TITLE=Playwright Test
+BODY=0ms 2.0s 4.0s 6.0s 8.0s 10.0s 12.0s 14.0s 16.0s 18.0s 20.0s 22.0s 24.0s 26.0s 28.0s 30.0s 32.0s Action Before After 1x about:blank Actions Metadata Locator Source Call Log Errors Console Network Attachments Annotations 1 ​ PLAYWRIGHT Status: allProjects: all TESTS Loading… TESTING OPTIONS SETTINGS
+ERRORS=[]

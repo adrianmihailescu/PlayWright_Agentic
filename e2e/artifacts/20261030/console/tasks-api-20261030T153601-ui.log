@@ -1,0 +1,4 @@
+RUN_ID=tasks-api-20261030T153601-ui DATE=20261030 START=2026-10-30 15:36:01 +02:00 COMMAND=npx playwright test --ui
+UI_SESSION_NOTE=The UI process remained live and emitted no further CLI text before teardown; local UI probe returned HTTP 200, but the test explorer remained at Loading and no test was run.
+SCREENSHOTS=artifacts/20261030/screenshots/tasks-api-20261030T153601-ui-playwright-ui.png; artifacts/20261030/screenshots/tasks-api-20261030T153601-ui-test-explorer-final.png
+EXIT_CODE=not available; UI server stopped after probe. No test JSON produced because no test was selected.

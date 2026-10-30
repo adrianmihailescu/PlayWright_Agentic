@@ -1,0 +1,7 @@
+{
+  "runId": "tasks-api-20261029T1704-investigate",
+  "startedAt": "2026-10-29T15:06:28.100Z",
+  "finishedAt": "2026-10-29T15:06:29.604Z",
+  "command": "npx playwright test tests/tasks.spec.ts --grep \"creates, completes, and reloads tasks\" --headed --workers=1 --trace=on --output=artifacts/tasks-api-20261029T1704-investigate/test-output --reporter=list,json",
+  "exitCode": 1
+}

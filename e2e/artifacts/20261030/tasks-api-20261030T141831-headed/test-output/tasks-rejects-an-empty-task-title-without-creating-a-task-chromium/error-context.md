@@ -1,0 +1,179 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: tasks.spec.ts >> rejects an empty task title without creating a task
+- Location: tests\tasks.spec.ts:159:5
+
+# Error details
+
+```
+Error: expect(received).toEqual(expected) // deep equality
+
+- Expected  - 1
++ Received  + 3
+
+- Array []
++ Array [
++   "Failed to load resource: the server responded with a status of 404 (Not Found)",
++ ]
+```
+
+# Page snapshot
+
+```yaml
+- main [ref=e3]:
+  - generic [ref=e4]:
+    - generic [aria-hidden] [ref=e5]: ✓
+    - generic [ref=e6]:
+      - paragraph [ref=e7]: YOUR WORKSPACE
+      - heading "Task Manager" [level=1] [ref=e8]
+    - generic [ref=e9]: API connected
+  - generic [ref=e11]:
+    - paragraph [ref=e12]: MAKE TODAY COUNT
+    - heading "One thing at a time." [level=2] [ref=e13]
+    - paragraph [ref=e14]: Capture your next step and keep your momentum going.
+  - region [ref=e15]:
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - heading "Your tasks" [level=2] [ref=e18]
+        - paragraph [ref=e19]: 4 total · 2 completed
+      - generic [ref=e20]: 2 left
+    - generic [ref=e21]:
+      - generic [ref=e22]: Task title
+      - textbox "Task title" [ref=e23]:
+        - /placeholder: What needs to be done?
+      - button "+ Add task" [active] [ref=e24] [cursor=pointer]
+    - alert [ref=e25]: Title is required.
+    - list "Tasks" [ref=e26]:
+      - listitem [ref=e27]:
+        - generic [ref=e29]: Generic Task
+        - button "Complete Generic Task" [ref=e30] [cursor=pointer]: Complete
+      - listitem [ref=e31]:
+        - generic [ref=e33]: Specific Task
+        - button "Complete Specific Task" [ref=e34] [cursor=pointer]: Complete
+      - listitem [ref=e35]:
+        - generic [aria-hidden] [ref=e36]: ✓
+        - generic [ref=e37]: Task A tasks-api-20261030T141831-headed
+        - generic [ref=e38]: Completed
+      - listitem [ref=e39]:
+        - generic [aria-hidden] [ref=e40]: ✓
+        - generic [ref=e41]: Task B tasks-api-20261030T141831-headed
+        - generic [ref=e42]: Completed
+  - generic [ref=e43]:
+    - generic [ref=e44]: Built for focus.
+    - generic [ref=e45]: React · TypeScript · .NET API
+```
+
+# Test source
+
+```ts
+  97  |   }
+  98  | 
+  99  |   const task1 = taskList.getByRole('listitem').filter({
+  100 |     has: page.getByText(taskTitle1, { exact: true }),
+  101 |   });
+  102 |   const task2 = taskList.getByRole('listitem').filter({
+  103 |     has: page.getByText(taskTitle2, { exact: true }),
+  104 |   });
+  105 | 
+  106 |   await expect(task1).toBeVisible();
+  107 |   await expect(task2).toBeVisible();
+  108 |   await expect(task1).not.toContainText('Completed');
+  109 |   await expect(task2).not.toContainText('Completed');
+  110 |   await expect(task1.getByRole('button', {
+  111 |     name: `Complete ${taskTitle1}`,
+  112 |     exact: true,
+  113 |   })).toBeVisible();
+  114 |   await expect(task2.getByRole('button', {
+  115 |     name: `Complete ${taskTitle2}`,
+  116 |     exact: true,
+  117 |   })).toBeVisible();
+  118 | 
+  119 |   await captureScreenshot(page, 'tasks-created');
+  120 | 
+  121 |   // Complete only the first task.
+  122 |   await task1.getByRole('button', {
+  123 |     name: `Complete ${taskTitle1}`,
+  124 |     exact: true,
+  125 |   }).click();
+  126 | 
+  127 |   await expect(task1).toContainText('Completed');
+  128 |   await expect(task2).not.toContainText('Completed');
+  129 | 
+  130 |   // Complete the second task.
+  131 |   await task2.getByRole('button', {
+  132 |     name: `Complete ${taskTitle2}`,
+  133 |     exact: true,
+  134 |   }).click();
+  135 | 
+  136 |   await expect(task1).toContainText('Completed');
+  137 |   await expect(task2).toContainText('Completed');
+  138 | 
+  139 |   await captureScreenshot(page, 'tasks-completed');
+  140 | 
+  141 |   // Reload and verify persisted state.
+  142 |   await page.reload();
+  143 | 
+  144 |   await expect(taskList).toBeVisible();
+  145 |   await expect(page.getByText('Loading your tasks…')).toBeHidden();
+  146 |   await expect(page.getByText('API connected', { exact: true })).toBeVisible();
+  147 |   await expect(task1).toBeVisible();
+  148 |   await expect(task2).toBeVisible();
+  149 |   await expect(task1).toContainText('Completed');
+  150 |   await expect(task2).toContainText('Completed');
+  151 | 
+  152 |   await captureScreenshot(page, 'tasks-after-reload');
+  153 | 
+  154 |   expect(applicationErrors).toEqual([]);
+  155 |   expect(consoleErrors).toEqual([]);
+  156 |   expect(apiErrors).toEqual([]);
+  157 | });
+  158 | 
+  159 | test('rejects an empty task title without creating a task', async ({ page }) => {
+  160 |   const { applicationErrors, consoleErrors, apiErrors } = observeErrors(page);
+  161 |   const createRequests: string[] = [];
+  162 | 
+  163 |   page.on('request', (request) => {
+  164 |     if (request.method() === 'POST' && /\/api\/tasks(?:[/?#]|$)/.test(request.url())) {
+  165 |       createRequests.push(request.url());
+  166 |     }
+  167 |   });
+  168 | 
+  169 |   await page.goto('/');
+  170 |   await expect(page.getByRole('heading', {
+  171 |     name: 'Task Manager',
+  172 |     exact: true,
+  173 |   })).toBeVisible();
+  174 |   await expect(page.getByText('Loading your tasks…')).toBeHidden();
+  175 |   await expect(page.getByText('API connected', { exact: true })).toBeVisible();
+  176 | 
+  177 |   const taskList = page.getByRole('list', {
+  178 |     name: 'Tasks',
+  179 |     exact: true,
+  180 |   });
+  181 |   await expect(taskList).toBeVisible();
+  182 |   const initialTaskCount = await taskList.getByRole('listitem').count();
+  183 |   const titleInput = page.getByLabel('Task title', { exact: true });
+  184 | 
+  185 |   await expect(titleInput).toHaveValue('');
+  186 |   await page.getByRole('button', {
+  187 |     name: '+ Add task',
+  188 |     exact: true,
+  189 |   }).click();
+  190 | 
+  191 |   await expect(page.getByRole('alert')).toHaveText('Title is required.');
+  192 |   await expect(taskList.getByRole('listitem')).toHaveCount(initialTaskCount);
+  193 |   expect(createRequests).toHaveLength(0);
+  194 |   await captureScreenshot(page, 'empty-title-validation');
+  195 | 
+  196 |   expect(applicationErrors).toEqual([]);
+> 197 |   expect(consoleErrors).toEqual([]);
+      |                         ^ Error: expect(received).toEqual(expected) // deep equality
+  198 |   expect(apiErrors).toEqual([]);
+  199 | });
+```

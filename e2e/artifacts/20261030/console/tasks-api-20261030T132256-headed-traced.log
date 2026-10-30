@@ -1,0 +1,79 @@
+
+Running 2 tests using 1 worker
+
+  x  1 [chromium] › tests\tasks.spec.ts:49:5 › creates, completes, and reloads tasks (2.9s)
+  x  2 [chromium] › tests\tasks.spec.ts:153:5 › rejects an empty task title without creating a task (1.4s)
+
+
+  1) [chromium] › tests\tasks.spec.ts:49:5 › creates, completes, and reloads tasks ─────────────────
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    + ]
+
+      147 |
+      148 |   expect(applicationErrors).toEqual([]);
+    > 149 |   expect(consoleErrors).toEqual([]);
+          |                         ^
+      150 |   expect(apiErrors).toEqual([]);
+      151 | });
+      152 |
+        at C:\Adrian\Work\TestProjects\Automation\playwright_agentic\e2e\tests\tasks.spec.ts:149:25
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    artifacts\tasks-api-20261030T132256-headed-traced\test-output\tasks-creates-completes-and-reloads-tasks-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: artifacts\tasks-api-20261030T132256-headed-traced\test-output\tasks-creates-completes-and-reloads-tasks-chromium\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    artifacts\tasks-api-20261030T132256-headed-traced\test-output\tasks-creates-completes-and-reloads-tasks-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace artifacts\tasks-api-20261030T132256-headed-traced\test-output\tasks-creates-completes-and-reloads-tasks-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests\tasks.spec.ts:153:5 › rejects an empty task title without creating a task ──
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    + ]
+
+      189 |
+      190 |   expect(applicationErrors).toEqual([]);
+    > 191 |   expect(consoleErrors).toEqual([]);
+          |                         ^
+      192 |   expect(apiErrors).toEqual([]);
+      193 | });
+        at C:\Adrian\Work\TestProjects\Automation\playwright_agentic\e2e\tests\tasks.spec.ts:191:25
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    artifacts\tasks-api-20261030T132256-headed-traced\test-output\tasks-rejects-an-empty-task-title-without-creating-a-task-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: artifacts\tasks-api-20261030T132256-headed-traced\test-output\tasks-rejects-an-empty-task-title-without-creating-a-task-chromium\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    artifacts\tasks-api-20261030T132256-headed-traced\test-output\tasks-rejects-an-empty-task-title-without-creating-a-task-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace artifacts\tasks-api-20261030T132256-headed-traced\test-output\tasks-rejects-an-empty-task-title-without-creating-a-task-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    [chromium] › tests\tasks.spec.ts:49:5 › creates, completes, and reloads tasks ──────────────────
+    [chromium] › tests\tasks.spec.ts:153:5 › rejects an empty task title without creating a task ───

@@ -1,0 +1,7 @@
+{
+  "runId": "tasks-api-20261029T1703-headed",
+  "startedAt": "2026-10-29T15:03:36.298Z",
+  "finishedAt": "2026-10-29T15:03:49.793Z",
+  "command": "npx playwright test --headed --workers=1 --trace=on --output=artifacts/tasks-api-20261029T1703-headed/test-output --reporter=list,json",
+  "exitCode": 1
+}

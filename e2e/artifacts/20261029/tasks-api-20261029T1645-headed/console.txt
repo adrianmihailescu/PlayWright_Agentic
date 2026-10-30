@@ -1,0 +1,36 @@
+**********************
+PowerShell transcript start
+Start time: 20261029164510
+Username: DESKTOP-3FOTC53\PuiuSiPuiu
+RunAs User: DESKTOP-3FOTC53\PuiuSiPuiu
+Configuration Name: 
+Machine: DESKTOP-3FOTC53 (Microsoft Windows NT 10.0.26300.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -NoProfile -NoLogo -NonInteractive -Command try { [Console]::OutputEncoding = [System.Text.UTF8Encoding]::new($false) } catch {}; try { if (Microsoft.PowerShell.Utility\Get-Variable -Name PSStyle -ErrorAction Ignore) { $PSStyle.OutputRendering = 'PlainText' } } catch {}; $global:LASTEXITCODE = 0; $__copilotCommandFinished = $false; $__copilotSuccess = $false; try { $global:LASTEXITCODE = 0
+$runId = 'tasks-api-20261029T1645-headed'; $started = Get-Date; Push-Location e2e; New-Item -ItemType Directory -Force -Path "artifacts\$runId" | Out-Null; $env:PW_ARTIFACT_RUN_ID = $runId; Start-Transcript -Path "artifacts\$runId\console.txt" -Force; Write-Output "RUN_ID=$runId STARTED=$($started.ToString('o')) COMMAND=npx playwright test tests/tasks.spec.ts --grep "creates, completes, and reloads tasks" --headed --workers=1 --trace=on --output=artifacts/$runId/test-output"; npx playwright test tests/tasks.spec.ts --grep "creates, completes, and reloads tasks" --headed --workers=1 --trace=on --output="artifacts/$runId/test-output"; $testExitCode = $LASTEXITCODE; $finished = Get-Date; if (Test-Path 'test-results\results.json') { Copy-Item 'test-results\results.json' "artifacts\$runId\results.json" }; Write-Output "RUN_ID=$runId EXIT=$testExitCode FINISHED=$($finished.ToString('o'))"; Stop-Transcript | Out-Null; Pop-Location; exit $testExitCode
+$__copilotSuccess = $?
+$__copilotCommandFinished = $true
+ } finally { if ($__copilotCommandFinished) { if (-not $__copilotSuccess -and $LASTEXITCODE -is [int] -and $LASTEXITCODE -ne 0) { $host.SetShouldExit($LASTEXITCODE) } elseif (-not $__copilotSuccess) { $host.SetShouldExit(1) } else { $host.SetShouldExit(0) } } }
+Process ID: 27064
+PSVersion: 7.6.9
+PSEdition: Core
+GitCommitId: 7.6.9
+OS: Microsoft Windows 10.0.26300
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.4
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is artifacts\tasks-api-20261029T1645-headed\console.txt
+RUN_ID=tasks-api-20261029T1645-headed STARTED=2026-10-29T16:45:10.7784091+02:00 COMMAND=npx playwright test tests/tasks.spec.ts --grep
+creates
+completes
+and
+reloads
+tasks --headed --workers=1 --trace=on --output=artifacts/tasks-api-20261029T1645-headed/test-output
+
+RUN_ID=tasks-api-20261029T1645-headed EXIT=1 FINISHED=2026-10-29T16:45:21.6572545+02:00
+**********************
+PowerShell transcript end
+End time: 20261029164521
+**********************

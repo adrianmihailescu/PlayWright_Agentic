@@ -1,0 +1,274 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Adrian\\Work\\TestProjects\\Automation\\playwright_agentic\\e2e\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--headed",
+      "--workers=1",
+      "--trace=on",
+      "--output=artifacts/tasks-api-20261029T1703-headed/test-output",
+      "--reporter=list,json"
+    ],
+    "configFile": "C:\\Adrian\\Work\\TestProjects\\Automation\\playwright_agentic\\e2e\\playwright.config.ts",
+    "rootDir": "C:/Adrian/Work/TestProjects/Automation/playwright_agentic/e2e/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Adrian/Work/TestProjects/Automation/playwright_agentic/e2e/artifacts/tasks-api-20261029T1703-headed/test-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Adrian/Work/TestProjects/Automation/playwright_agentic/e2e/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Adrian\\Work\\TestProjects\\Automation\\playwright_agentic\\e2e\\artifacts\\tasks-api-20261029T1703-headed\\test-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "C:\\Adrian\\Work\\TestProjects\\Automation\\playwright_agentic\\e2e\\tests",
+        "snapshotDir": "C:\\Adrian\\Work\\TestProjects\\Automation\\playwright_agentic\\e2e\\tests",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://localhost:5174",
+          "trace": "on",
+          "screenshot": "only-on-failure",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium",
+          "headless": false
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "tasks.spec.ts",
+      "file": "tasks.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "creates, completes, and reloads tasks",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 3032,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: the server responded with a status of 404 (Not Found)\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: the server responded with a status of 404 (Not Found)\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at C:\\Adrian\\Work\\TestProjects\\Automation\\playwright_agentic\\e2e\\tests\\tasks.spec.ts:149:25",
+                    "location": {
+                      "file": "C:\\Adrian\\Work\\TestProjects\\Automation\\playwright_agentic\\e2e\\tests\\tasks.spec.ts",
+                      "column": 25,
+                      "line": 149
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 147 |\u001b[39m\n \u001b[90m 148 |\u001b[39m   expect(applicationErrors)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 149 |\u001b[39m   expect(consoleErrors)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 150 |\u001b[39m   expect(apiErrors)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m 151 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 152 |\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Adrian\\Work\\TestProjects\\Automation\\playwright_agentic\\e2e\\tests\\tasks.spec.ts",
+                        "column": 25,
+                        "line": 149
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: the server responded with a status of 404 (Not Found)\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  147 |\n  148 |   expect(applicationErrors).toEqual([]);\n> 149 |   expect(consoleErrors).toEqual([]);\n      |                         ^\n  150 |   expect(apiErrors).toEqual([]);\n  151 | });\n  152 |\n    at C:\\Adrian\\Work\\TestProjects\\Automation\\playwright_agentic\\e2e\\tests\\tasks.spec.ts:149:25"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T15:03:42.012Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Adrian\\Work\\TestProjects\\Automation\\playwright_agentic\\e2e\\artifacts\\tasks-api-20261029T1703-headed\\test-output\\tasks-creates-completes-and-reloads-tasks-chromium\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Adrian\\Work\\TestProjects\\Automation\\playwright_agentic\\e2e\\artifacts\\tasks-api-20261029T1703-headed\\test-output\\tasks-creates-completes-and-reloads-tasks-chromium\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Adrian\\Work\\TestProjects\\Automation\\playwright_agentic\\e2e\\artifacts\\tasks-api-20261029T1703-headed\\test-output\\tasks-creates-completes-and-reloads-tasks-chromium\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Adrian\\Work\\TestProjects\\Automation\\playwright_agentic\\e2e\\tests\\tasks.spec.ts",
+                    "column": 25,
+                    "line": 149
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "d2d3f88df070d751ab05-bab1ace880ca3393605e",
+          "file": "tasks.spec.ts",
+          "line": 49,
+          "column": 5
+        },
+        {
+          "title": "rejects an empty task title without creating a task",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1594,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: the server responded with a status of 404 (Not Found)\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: the server responded with a status of 404 (Not Found)\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at C:\\Adrian\\Work\\TestProjects\\Automation\\playwright_agentic\\e2e\\tests\\tasks.spec.ts:191:25",
+                    "location": {
+                      "file": "C:\\Adrian\\Work\\TestProjects\\Automation\\playwright_agentic\\e2e\\tests\\tasks.spec.ts",
+                      "column": 25,
+                      "line": 191
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 189 |\u001b[39m\n \u001b[90m 190 |\u001b[39m   expect(applicationErrors)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 191 |\u001b[39m   expect(consoleErrors)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 192 |\u001b[39m   expect(apiErrors)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m 193 |\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Adrian\\Work\\TestProjects\\Automation\\playwright_agentic\\e2e\\tests\\tasks.spec.ts",
+                        "column": 25,
+                        "line": 191
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: the server responded with a status of 404 (Not Found)\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  189 |\n  190 |   expect(applicationErrors).toEqual([]);\n> 191 |   expect(consoleErrors).toEqual([]);\n      |                         ^\n  192 |   expect(apiErrors).toEqual([]);\n  193 | });\n    at C:\\Adrian\\Work\\TestProjects\\Automation\\playwright_agentic\\e2e\\tests\\tasks.spec.ts:191:25"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T15:03:46.393Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Adrian\\Work\\TestProjects\\Automation\\playwright_agentic\\e2e\\artifacts\\tasks-api-20261029T1703-headed\\test-output\\tasks-rejects-an-empty-task-title-without-creating-a-task-chromium\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Adrian\\Work\\TestProjects\\Automation\\playwright_agentic\\e2e\\artifacts\\tasks-api-20261029T1703-headed\\test-output\\tasks-rejects-an-empty-task-title-without-creating-a-task-chromium\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Adrian\\Work\\TestProjects\\Automation\\playwright_agentic\\e2e\\artifacts\\tasks-api-20261029T1703-headed\\test-output\\tasks-rejects-an-empty-task-title-without-creating-a-task-chromium\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Adrian\\Work\\TestProjects\\Automation\\playwright_agentic\\e2e\\tests\\tasks.spec.ts",
+                    "column": 25,
+                    "line": 191
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "d2d3f88df070d751ab05-137fc17e65da94a32f43",
+          "file": "tasks.spec.ts",
+          "line": 153,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-29T15:03:37.697Z",
+    "duration": 12037.652,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}

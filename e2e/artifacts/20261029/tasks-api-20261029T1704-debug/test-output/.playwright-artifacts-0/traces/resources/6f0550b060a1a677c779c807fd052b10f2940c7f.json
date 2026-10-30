@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "title": "Generic Task",
+        "isCompleted": false
+    },
+    {
+        "id": 2,
+        "title": "Specific Task",
+        "isCompleted": false
+    },
+    {
+        "id": 3,
+        "title": "Task A tasks-api-20261029T1704-investigate2",
+        "isCompleted": true
+    },
+    {
+        "id": 4,
+        "title": "Task B tasks-api-20261029T1704-investigate2",
+        "isCompleted": true
+    },
+    {
+        "id": 5,
+        "title": "Task A 7221ab7a-8972-4515-a922-dffde5afbc58",
+        "isCompleted": true
+    },
+    {
+        "id": 6,
+        "title": "Task B 7221ab7a-8972-4515-a922-dffde5afbc58",
+        "isCompleted": false
+    }
+]

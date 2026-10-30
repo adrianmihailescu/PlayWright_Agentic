@@ -1,0 +1,7 @@
+
+Running 2 tests using 2 workers
+
+  ok 2 [chromium] › tests\tasks.spec.ts:159:5 › rejects an empty task title without creating a task (1.1s)
+  ok 1 [chromium] › tests\tasks.spec.ts:55:5 › creates, completes, and reloads tasks (2.1s)
+
+  2 passed (8.4s)

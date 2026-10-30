@@ -1,0 +1,44 @@
+
+Running 1 test using 1 worker
+
+BROWSER_CONSOLE_ERROR Failed to load resource: the server responded with a status of 404 (Not Found) | {"url":"http://localhost:5174/favicon.ico","line":0,"column":0,"lineNumber":0,"columnNumber":0}
+  x  1 [chromium] › tests\tasks.spec.ts:60:5 › creates, completes, and reloads tasks (2.6s)
+
+
+  1) [chromium] › tests\tasks.spec.ts:60:5 › creates, completes, and reloads tasks ─────────────────
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   "Failed to load resource: the server responded with a status of 404 (Not Found) | {\"url\":\"http://localhost:5174/favicon.ico\",\"line\":0,\"column\":0,\"lineNumber\":0,\"columnNumber\":0}",
+    + ]
+
+      158 |
+      159 |   expect(applicationErrors).toEqual([]);
+    > 160 |   expect(consoleErrors).toEqual([]);
+          |                         ^
+      161 |   expect(apiErrors).toEqual([]);
+      162 | });
+      163 |
+        at C:\Adrian\Work\TestProjects\Automation\playwright_agentic\e2e\tests\tasks.spec.ts:160:25
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    artifacts\tasks-api-20261029T1704-investigate2\test-output\tasks-creates-completes-and-reloads-tasks-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: artifacts\tasks-api-20261029T1704-investigate2\test-output\tasks-creates-completes-and-reloads-tasks-chromium\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    artifacts\tasks-api-20261029T1704-investigate2\test-output\tasks-creates-completes-and-reloads-tasks-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace artifacts\tasks-api-20261029T1704-investigate2\test-output\tasks-creates-completes-and-reloads-tasks-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests\tasks.spec.ts:60:5 › creates, completes, and reloads tasks ──────────────────

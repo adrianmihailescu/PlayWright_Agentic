@@ -1,0 +1,44 @@
+
+Running 1 test using 1 worker
+
+  x  1 [chromium] › tests\tasks.spec.ts:159:5 › rejects an empty task title without creating a task (10.8s)
+Testing stopped early after 1 maximum allowed failures.
+
+
+  1) [chromium] › tests\tasks.spec.ts:159:5 › rejects an empty task title without creating a task ──
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    + ]
+
+      195 |
+      196 |   expect(applicationErrors).toEqual([]);
+    > 197 |   expect(consoleErrors).toEqual([]);
+          |                         ^
+      198 |   expect(apiErrors).toEqual([]);
+      199 | });
+        at C:\Adrian\Work\TestProjects\Automation\playwright_agentic\e2e\tests\tasks.spec.ts:197:25
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    artifacts\20261030\tasks-api-20261030T144245-debug\test-output\tasks-rejects-an-empty-task-title-without-creating-a-task-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: artifacts\20261030\tasks-api-20261030T144245-debug\test-output\tasks-rejects-an-empty-task-title-without-creating-a-task-chromium\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    artifacts\20261030\tasks-api-20261030T144245-debug\test-output\tasks-rejects-an-empty-task-title-without-creating-a-task-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace artifacts\20261030\tasks-api-20261030T144245-debug\test-output\tasks-rejects-an-empty-task-title-without-creating-a-task-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests\tasks.spec.ts:159:5 › rejects an empty task title without creating a task ───
+  1 error was not a part of any test, see above for details

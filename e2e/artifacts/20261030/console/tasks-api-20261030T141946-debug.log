@@ -1,0 +1,1 @@
+error: option '--debug [mode]' argument 'tests/tasks.spec.ts' is invalid. Allowed choices are inspector, cli.
